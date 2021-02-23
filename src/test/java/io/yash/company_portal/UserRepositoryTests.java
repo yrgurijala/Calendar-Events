@@ -1,4 +1,4 @@
-package io.yash.LoginPage;
+package io.yash.company_portal;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

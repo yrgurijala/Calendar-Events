@@ -1,4 +1,4 @@
-package io.yash.LoginPage;
+package io.yash.company_portal;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
