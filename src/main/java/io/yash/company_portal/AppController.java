@@ -1,5 +1,7 @@
 package io.yash.company_portal;
 
+import io.yash.company_portal.entity.User;
+import io.yash.company_portal.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

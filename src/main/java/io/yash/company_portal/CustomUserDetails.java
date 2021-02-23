@@ -1,5 +1,6 @@
 package io.yash.company_portal;
 
+import io.yash.company_portal.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

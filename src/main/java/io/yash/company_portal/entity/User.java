@@ -1,4 +1,4 @@
-package io.yash.company_portal;
+package io.yash.company_portal.entity;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 

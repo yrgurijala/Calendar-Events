@@ -1,5 +1,6 @@
-package io.yash.company_portal;
+package io.yash.company_portal.repository;
 
+import io.yash.company_portal.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

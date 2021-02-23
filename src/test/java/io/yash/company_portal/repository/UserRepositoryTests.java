@@ -1,5 +1,7 @@
-package io.yash.company_portal;
+package io.yash.company_portal.repository;
 
+import io.yash.company_portal.entity.Event;
+import io.yash.company_portal.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
