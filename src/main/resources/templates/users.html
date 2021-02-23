@@ -10,13 +10,7 @@
 <body>
     <div class="container text-center">
         <div>
-            <form th:action="@{/logout}" method="post">
-                <p>
-                    Welcome <b>[[${#request.userPrincipal.principal.getFullName}]]</b>
-                </p>
-
-                <input type="submit" value="Sign out" />
-            </form>
+            <h3>Users List</h3>
         </div>
 
         <br>
@@ -42,6 +36,12 @@
                 </tbody>
 
             </table>
+        </div>
+
+        <div>
+            <form th:action="@{/logout}" method="post">
+                <button type="submit" value="Sign out" class="btn btn-primary">Sign Out</button>
+            </form>
         </div>
     </div>
 </body>
