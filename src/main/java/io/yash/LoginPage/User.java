@@ -1,5 +1,7 @@
 package io.yash.LoginPage;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import javax.persistence.*;
 
 @Entity
@@ -16,6 +18,9 @@ public class User {
     @Column(nullable = false, length = 64)
     private String password;
 
+    @Column(nullable = false, length = 64)
+    private String decryptedPassword;
+
     @Column(nullable = false, length = 20)
     private String firstName;
 
@@ -27,7 +32,13 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        this.password = encoder.encode(password);
+        this.decryptedPassword = password;
+    }
+
+    public String getDecryptedPassword() {
+        return decryptedPassword;
     }
 
     public Long getId() {

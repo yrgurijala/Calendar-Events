@@ -1,10 +1,13 @@
 package io.yash.LoginPage;
 
+import org.dom4j.rule.Mode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.List;
 
 @Controller
 public class AppController {
@@ -30,8 +33,14 @@ public class AppController {
     }
 
     @GetMapping("list_users")
-    public String getUserList(){
+    public String getUserList(Model model){
+        List<User> listUsers = repo.findAll();
+        model.addAttribute("listUsers", listUsers);
         return "users";
     }
 
+    @PostMapping("/logout")
+    public String logOut(){
+        return "home";
+    }
 }
