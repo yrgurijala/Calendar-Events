@@ -48,11 +48,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/list_users").authenticated()
+                .antMatchers("/view_calendar").authenticated()
                 .anyRequest().permitAll()
                 .and()
                 .formLogin()
                     .usernameParameter("Email ID")
-                    .defaultSuccessUrl("/list_users")
+                    .defaultSuccessUrl("/welcome")
                     .permitAll()
                 .and()
                 .logout()

@@ -31,10 +31,20 @@ public class AppController {
         return "registration_success";
     }
 
-    @GetMapping("list_users")
+    @GetMapping("/list_users")
     public String getUserList(Model model){
         List<User> listUsers = repo.findAll();
         model.addAttribute("listUsers", listUsers);
         return "users";
+    }
+
+    @GetMapping("/view_calendar")
+    public String viewCalendar(){
+        return "calendar.html";
+    }
+
+    @GetMapping("/welcome")
+    public String welcome(){
+        return "welcome";
     }
 }
