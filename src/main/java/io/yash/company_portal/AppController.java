@@ -37,9 +37,4 @@ public class AppController {
         model.addAttribute("listUsers", listUsers);
         return "users";
     }
-
-    @PostMapping("/logout")
-    public String logOut(){
-        return "home";
-    }
 }
