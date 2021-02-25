@@ -1,5 +1,6 @@
 package io.yash.company_portal;
 
+import io.yash.company_portal.entity.CustomDate;
 import io.yash.company_portal.entity.User;
 import io.yash.company_portal.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,8 +42,15 @@ public class AppController {
     }
 
     @GetMapping("/view_calendar")
-    public String viewCalendar(){
-        return "calendar.html";
+    public String viewCalendar(Model model){
+        model.addAttribute("date", new CustomDate());
+        return "calendar";
+    }
+
+    @PostMapping("/load_calendar")
+    public String loadCalendar(CustomDate date, Model model){
+        model.addAttribute("date", date.getDate());
+        return "calendar_updated";
     }
 
     @GetMapping("/welcome")
