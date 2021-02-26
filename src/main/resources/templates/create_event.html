@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Event- Company Portal</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div class="container text-center">
+        <div>
+            <h1>Event Creation</h1>
+        </div>
+
+        <form th:action="@{/process_event_creation}" method="post"
+              style="max-width: 600px; margin: 0 auto;"
+              th:object="${event}">
+
+            <div class="m-3">
+                <div class="form-group row">
+                    <label class="col-form-label col-4">Date</label>
+                    <div class="col-8">
+                        <input type="date" class="form-control" th:field="*{date}" required/>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label class="col-form-label col-4">Description</label>
+                    <div class="col-8">
+                        <input type="text" class="form-control" th:field="*{description}" maxlength="64"/>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>
