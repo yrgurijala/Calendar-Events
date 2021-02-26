@@ -10,14 +10,8 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(nullable = false, length = 2)
-    private int day;
-
-    @Column(nullable = false, length = 2)
-    private int month;
-
-    @Column(nullable = false, length = 4)
-    private int year;
+    @Column(nullable = false, length = 10)
+    private String date;
 
     @Column(nullable = false, length = 64)
     private String description;
@@ -33,28 +27,12 @@ public class Event {
         this.id = id;
     }
 
-    public int getDay() {
-        return day;
+    public String getDate() {
+        return date;
     }
 
-    public void setDay(int day) {
-        this.day = day;
-    }
-
-    public int getMonth() {
-        return month;
-    }
-
-    public void setMonth(int month) {
-        this.month = month;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     public String getDescription() {

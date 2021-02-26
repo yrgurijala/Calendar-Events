@@ -1,13 +1,16 @@
 package io.yash.company_portal.repository;
 
 import io.yash.company_portal.entity.Event;
-import io.yash.company_portal.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 import org.springframework.test.annotation.Rollback;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -26,9 +29,7 @@ public class EventRepositoryTests {
     public void testCreateEvent(){
         Event event = new Event();
         event.setFullName("Yash Gurijala");
-        event.setDay(23);
-        event.setMonth(2);
-        event.setYear(2021);
+        event.setDate("2020-2-26");
         event.setDescription("Random event");
 
         Event savedEvent = repo.save(event);
