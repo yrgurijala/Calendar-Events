@@ -38,7 +38,7 @@ public class UserRepositoryTests {
 
     @Test
     public void testFindUserByEmail(){
-        String email = "gyashu45@gmail.com";
+        String email = "user@gmail.com";
         User user = repo.findByEmail(email);
 
         assertThat(user).isNotNull();
