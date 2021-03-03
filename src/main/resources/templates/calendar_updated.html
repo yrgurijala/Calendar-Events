@@ -18,12 +18,22 @@
         <p class="fs-1 text-center">Yash Calendar</p>
     </div>
 
-    <h3><a th:href="@{/view_calendar}">Go Back</a> </h3>
+    <h3>
+        <a th:href="@{/create_event}">Create Event</a>
+    </h3>
+
+    <form th:action="@{/load_calendar}" method="post"
+          th:object="${date}">
+        <label>Date:</label>
+        <input type="date" th:field="*{date}"/>
+
+        <input type="submit">
+    </form>
 
     <div class="container text-center">
 
         <div class="p-3 mb-2 bg-light text-dark">
-            <h3 th:text="${date}">Date</h3>
+            <h3 th:text="${dateReceived}">Date</h3>
         </div>
 
         <br>

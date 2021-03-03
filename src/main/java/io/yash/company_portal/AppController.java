@@ -55,12 +55,15 @@ public class AppController {
     @GetMapping("/view_calendar")
     public String viewCalendar(Model model){
         model.addAttribute("date", new CustomDate());
+        List<Event> listEvents = eventRepo.findAll();
+        model.addAttribute("listEvents",listEvents);
         return "calendar";
     }
 
     @PostMapping("/load_calendar")
     public String loadCalendar(CustomDate date, Model model){
-        model.addAttribute("date", date.getDate());
+        model.addAttribute("date", new CustomDate());
+        model.addAttribute("dateReceived", date.getDate());
         List<Event> listEvents = eventRepo.findEventsByDate(date.getDate());
         model.addAttribute("listEvents",listEvents);
         return "calendar_updated";
@@ -81,6 +84,7 @@ public class AppController {
 
         event.setFullName(loggedInUser.getFirstName() + " " + loggedInUser.getLastName());
         eventRepo.save(event);
-        return "calendar";
+
+        return "event_creation_success";
     }
 }
