@@ -11,6 +11,7 @@ import org.springframework.test.annotation.Rollback;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -36,5 +37,11 @@ public class EventRepositoryTests {
         Event existingEvent = entityManager.find(Event.class, savedEvent.getId());
 
         assertThat(existingEvent.getDescription()).isEqualTo(event.getDescription());
+    }
+
+    @Test
+    public void testFindEventsByDate(){
+        List<Event> eventsFound = repo.findEventsByDate("1999-05-31");
+        System.out.println(eventsFound.size());
     }
 }

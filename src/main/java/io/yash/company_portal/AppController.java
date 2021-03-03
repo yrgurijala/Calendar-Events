@@ -61,6 +61,8 @@ public class AppController {
     @PostMapping("/load_calendar")
     public String loadCalendar(CustomDate date, Model model){
         model.addAttribute("date", date.getDate());
+        List<Event> listEvents = eventRepo.findEventsByDate(date.getDate());
+        model.addAttribute("listEvents",listEvents);
         return "calendar_updated";
     }
 

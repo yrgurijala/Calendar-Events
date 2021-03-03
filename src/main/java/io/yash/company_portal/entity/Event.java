@@ -10,7 +10,7 @@ public class Event {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(nullable = false, length = 10)
+    @Column(nullable = false, length = 20)
     private String date;
 
     @Column(nullable = false, length = 64)
